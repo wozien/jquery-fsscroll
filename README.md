@@ -60,7 +60,8 @@ JS方式加载：
 | pagination | 是否显示分页 | boolean | true | 
 | keyboard | 是否支持键盘操作 | boolean | false |
 | direction | 滑动方向 | string | vertical |
-| callback | 动画结束回调 | function | null | 
+| beforeScroll | 滑动开始前回调 | function | null | 
+| afterScroll | 滑动结束后回调 | function | null | 
 
 #### option.selectors
 
@@ -77,3 +78,17 @@ JS方式加载：
 }
 
 ```
+
+#### option.beforeScroll(a,b)
+
+- 说明： 滑动开始前回调
+- 函数参数：
+ ``a``: 显示页的jquery对象
+ ``b``: 显示页的索引
+
+ #### option.afterScroll(a,b)
+
+- 说明： 滑动结束后回调
+- 函数参数：
+ ``a``: 显示页的jquery对象
+ ``b``: 显示页的索引
