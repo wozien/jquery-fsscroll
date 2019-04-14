@@ -2,11 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>fsScroll--基于jquery全屏轮播插件</title>
+  <link rel="stylesheet" href="./src/jquery.fsscroll.css">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial,"Microsoft YaHei",sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container, .sections, .section {
+      position: relative;
+      height: 100%;
+      text-align: center;
+      color: #fff;
+    }
+    .section h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      transition: all .3s ease;
+    }
+    .section:first-child h1 {
+      animation: first-show .3s;
+    }
+    .section0 {
+      background: #409EFF;
+    }
+    .section2 {
+      background: #E6A23C;
+    }
+    .section3 {
+      background: #F56C6C;
+    }
+    .section1{
+      background: #67C23A;
+    }
+    .section h1.text-animate {
+      left: 0px;
+      transform: translateX(-100%);
+    }
+    @keyframes first-show {
+      0% {
+        left: 0px;
+        transform: translateX(-100%);
+      }
+      100% {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, Github Pages</h1>
+  <div class="container" data-fs-scroll>
+    <div class="sections">
+      <div class="section section0">
+        <h1>fsScroll, 一款基于jQuery的全轮播放插件，它具有轻便，够用，高扩展性的特点</h1>
+      </div>
+      <div class="section section1">
+        <h1>可用于产品轮播导航，个人信息展示等场景</h1>
+      </div>
+      <div class="section section2">
+        <h1>让你的产品展示更加酷炫，加入让人善心悦目的动画效果吧</h1>
+      </div>
+      <div class="section section3">
+        <h1>如果喜欢的话，记得给小星星，……^_^</h1>
+      </div>
+    </div>
+  </div>
+
+  <script src="./src/jquery.min.js"></script>
+  <script src="./src/jquery.fsscroll.js"></script>
+
+  <script>
+    $('.container').fsScroll({
+
+      beforeScroll: function(el, index) {
+        el.find('h1').addClass('text-animate');
+      },
+
+      afterScroll: function(el, index) {
+        el.find('h1').removeClass('text-animate');
+      }
+    })
+  </script>
 </body>
 </html>
