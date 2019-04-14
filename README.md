@@ -1,4 +1,4 @@
-一款基于jQuery的全轮播放插件，它具有轻便，够用，高扩展性的特点。可用于产品轮播导航，个人信息展示等场景。
+一款基于jQuery的简便的，高扩展性的全屏轮播插件。可用于产品轮播导航，个人信息展示等场景。
 
 ### 基本使用
 ---
@@ -7,8 +7,8 @@
 
 ```html
 <link rel="stylesheet" href="../src/jquery.fsscroll.css">
-<script src="./jquery.min.js"></script>
-<script src="../src/jquery.fsscroll.js"></script>
+<script src="jquery.min.js"></script>
+<script src="jquery.fsscroll.js"></script>
  ```
 
 #### DOM结构
@@ -83,12 +83,12 @@ JS方式加载：
 
 - 说明： 滑动开始前回调
 - 函数参数：
- ``a``: 显示页的jquery对象
+ ``a``: 显示页的容器section， jquery对象
  ``b``: 显示页的索引
 
  #### option.afterScroll(a,b)
 
 - 说明： 滑动结束后回调
 - 函数参数：
- ``a``: 显示页的jquery对象
+ ``a``: 显示页的容器section， jquery对象
  ``b``: 显示页的索引
